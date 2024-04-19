@@ -18,5 +18,5 @@ import java.io.Serializable;
 public class BaseEntity<ID extends Serializable> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected ID id;
+    private ID id;
 }

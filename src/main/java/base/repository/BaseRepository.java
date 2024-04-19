@@ -12,4 +12,9 @@ public interface BaseRepository<T extends BaseEntity<ID>, ID extends Serializabl
     Optional<T> findById(ID id);
 
     void delete(T entity);
+    void beginTransaction();
+
+    void commitTransaction();
+
+    void rollback();
 }
