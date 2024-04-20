@@ -124,16 +124,16 @@ public class ApplicationContext {
     public static CourseServiceImpl getCourseService(){
         return COURSE_SERVICE;
     }
-    private static CareerStatusServiceImpl getCareerStatusService(){
+    public static CareerStatusServiceImpl getCareerStatusService(){
         return CAREER_STATUS_SERVICE;
     }
-    private static CareerLevelServiceImpl getCareerLevelService(){
+    public static CareerLevelServiceImpl getCareerLevelService(){
         return CAREER_LEVEL_SERVICE;
     }
-    private static CareerEnrollmentServiceImpl getCareerEnrollmentService(){
+    public static CareerEnrollmentServiceImpl getCareerEnrollmentService(){
         return CAREER_ENROLLMENT_SERVICE;
     }
-    private static CareerServiceImpl getCareerService(){
+    public static CareerServiceImpl getCareerService(){
         return CAREER_SERVICE;
     }
 }

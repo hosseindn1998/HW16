@@ -1,10 +1,14 @@
 package Model;
 
 import base.entity.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,12 +16,20 @@ import java.util.Date;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString()
+@Entity
 public class CourseOccurrence extends BaseEntity<Long> {
     Integer courseId;
     Integer occurrenceYear;
     String courseOccurrenceCode;
-    Integer professorId;
+    @ManyToOne
+    Professor professor;
     Date startDate;
     Date endDate;
     Integer capacity;
+    @OneToMany(mappedBy = "courseOccurrence")
+    List<Schedule>schedules;
+    @ManyToOne
+    Course course;
+    @OneToMany(mappedBy = "courseOccurrence")
+    List<AssistantProfessor>assistantProfessors;
 }

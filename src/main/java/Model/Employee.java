@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString()
+@Entity
 public class Employee extends Person{
     Integer hoqoqPaye;
     Integer salary;

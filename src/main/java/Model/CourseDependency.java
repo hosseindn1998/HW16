@@ -16,15 +16,9 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString()
 @Entity
-public class Career extends BaseEntity<Long> {
-    String careerName;
-    Integer durationYears;
-    Integer requiredOptativeCourses;
-    @OneToMany(mappedBy = "career")
-    List<Course> courses;
-    @OneToMany(mappedBy = "career")
-    List<CareerEnrollment> careerEnrollment;
+public class CourseDependency extends BaseEntity<Long> {
     @ManyToOne
-    CareerLevel careerLevel;
-
+    Course mainCourse;
+    @ManyToOne
+    Course requiredCourse;
 }

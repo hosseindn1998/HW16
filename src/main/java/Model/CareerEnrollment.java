@@ -1,6 +1,8 @@
 package Model;
 
 import base.entity.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -10,11 +12,16 @@ import java.util.Date;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@ToString
+@Entity
 public class CareerEnrollment extends BaseEntity<Long> {
-    Integer studentId;
-    Integer careerId;
+    @ManyToOne
+    Student student;
+    @ManyToOne
+    Career career;
     Date enrollmentDate;
-    Integer careerStatusId;
+    @ManyToOne
+    CareerStatus careerStatus;
     Date careerStatusDate;
 
 }

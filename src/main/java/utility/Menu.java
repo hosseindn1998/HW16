@@ -1,8 +1,10 @@
 package utility;
 
+import Model.Career;
 import Model.Professor;
 import Model.Student;
 import lombok.NoArgsConstructor;
+import service.Career.CareerService;
 import service.Professor.ProfessorService;
 import service.student.StudentService;
 
@@ -11,7 +13,6 @@ import java.util.Scanner;
 public class Menu {
     private final ProfessorService studentService =  ApplicationContext.getProfessorService();
     private final Scanner scanner = new Scanner(System.in);
-
 
 
     public void signUp(){
@@ -36,7 +37,7 @@ public class Menu {
 
 //        Customer customer = new Customer(id, firstName, lastName, username, password, nationalCode, phoneNumber, address);
         Student student=new Student(1L,"hosseindn1998","Aa12345","123456");
-        Professor professor=new Professor(Boolean.FALSE,100,12,50);
+        Professor professor=new Professor();
         Professor saved=studentService.saveOrUpdate(professor);
 
         if (saved != null)

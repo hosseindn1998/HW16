@@ -2,22 +2,21 @@ package Model;
 
 import base.entity.BaseEntity;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString
+@ToString()
 @Entity
-public class CareerStatus extends BaseEntity<Long> {
-    String careerStatusName;
-    @OneToMany(mappedBy = "careerStatus")
-    List<CareerEnrollment> careerEnrollments;
+public class ProfessorCourse extends BaseEntity<Long> {
+    @ManyToOne
+    Professor professor;
+    @ManyToOne
+    Course course;
 
 }
