@@ -24,6 +24,7 @@ import service.room.RoomService;
 import service.student.StudentService;
 import service.student.StudentServiceImpl;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 @NoArgsConstructor
 public class Menu {
@@ -45,56 +46,28 @@ public class Menu {
     private final CareerLevelServiceImpl careerLevelService=ApplicationContext.getCareerLevelService();
     private final CareerEnrollmentServiceImpl careerEnrollmentService=ApplicationContext.getCareerEnrollmentService();
     private final CareerServiceImpl careerService=ApplicationContext.getCareerService();
-
-
-
     private final Scanner scanner = new Scanner(System.in);
+    public void publicMenu()  {
 
+        System.out.println("HELLO WELCOME TO YOUR LMS");
+        System.out.println("1-SignIn User");
+        System.out.println("0-Exit");
 
-    public void signUp(){
-        System.out.println("--- Signing Up NEW STUDENT ---");
-        System.out.println("first name: ");
-        Integer id = scanner.nextInt();
-        String firstName = scanner.nextLine();
-//        System.out.println("last name: ");
-//        String lastName = scanner.nextLine();
-//        System.out.println("username: ");
-//        String username = scanner.nextLine();
-//        System.out.println("password: ");
-//        String password = scanner.nextLine();
-        System.out.println("national code: ");
-        String nationalCode = scanner.nextLine();
-//        System.out.println("Date Of Birthdate (for ex 1998-07-26: ");
-//        String dateOfBirth = scanner.nextLine();
-//        System.out.println("phone number: ");
-//        String phoneNumber = scanner.nextLine();
-//        System.out.println("address: ");
-//        String address = scanner.nextLine();
+        int number = scanner.nextInt();
+        scanner.nextLine();
 
-//        Customer customer = new Customer(id, firstName, lastName, username, password, nationalCode, phoneNumber, address);
-        Student student=new Student(1L,"hosseindn1998","Aa12345","123456");
-        Professor professor=new Professor();
-        Room room = new Room();
-//        Student saved=studentService.saveOrUpdate(student);
-        Student saved=studentService.saveOrUpdate(student);
-        System.out.println(studentService.findById(2L));
-
-        if (saved != null)
-            System.out.println("signed up successfully!");
-        else
-            System.out.println("Something went wrong, Please try again.");
+        switch (number) {
+            case 1 -> signIn();
+            case 0 -> System.out.println("Thank you for use,Nice to meet you");
+            default -> System.out.println("Fake input,please Enter Number 1-6 ");
+        }
     }
-    public void deleteStudentById(Long id){
-//        Student student=new Student("123");
-        Student student=new Student(1L,"hosseindn1998","Aa12345","123456");
-//        studentService.deleteById(id);
-        System.out.println();
-    }
-    public void fetchStudent(){
-//        Student student=studentService.findById(2L);
-//        System.out.println(student);
-
-
-    }
+        public void signIn () {
+            System.out.println("***   User Menu   ***");
+            System.out.println("1- add User");
+            System.out.println("2- delete User");
+            System.out.println("3- edit user");
+            System.out.println("0- Back to previous Menu");
+        }
 
 }

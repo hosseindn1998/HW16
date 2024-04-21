@@ -1,13 +1,17 @@
 package Repository.student;
 
+import Model.Person;
 import Model.Student;
 import base.repository.BaseRepositoryImpl;
 import connection.SessionFactorySingleton;
-import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class StudentRepositoryImpl extends BaseRepositoryImpl<Student,Long> implements StudentRepository {
+
 
     public StudentRepositoryImpl(SessionFactory sessionFactory) {
         super(sessionFactory);
@@ -19,11 +23,19 @@ public class StudentRepositoryImpl extends BaseRepositoryImpl<Student,Long> impl
     }
 
     @Override
-    public boolean isExistsByUsername(String username) {
-//        Session session = SessionFactorySingleton.getInstance().getCurrentSession();
-//        Query<Student> query = session.createQuery("FROM student u WHERE u.username = :username", Student.class);
-//        query.setParameter("username", username);
-//        return query.uniqueResult() != null;
-        return false;
+    public Boolean isExistsByUsername(String username) {
+        Session session = SessionFactorySingleton.getInstance().getCurrentSession();
+        Query<Student> query = session.createQuery("FROM Student s WHERE s.username = :username", Student.class);
+        query.setParameter("username", username);
+        return query.list()!= null;
+    }
+
+    @Override
+    public Student authentication(String username, String password) {
+        Session session = SessionFactorySingleton.getInstance().getCurrentSession();
+        return session.createQuery("FROM Student s WHERE s.username= :username AND s.password = :password", Student.class)
+                .setParameter("username", username)
+                .setParameter("password", password)
+                .uniqueResult();
     }
 }

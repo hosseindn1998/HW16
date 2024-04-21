@@ -30,6 +30,7 @@ public abstract class BaseRepositoryImpl<T extends BaseEntity<ID>,ID extends Ser
         return Optional.ofNullable(session.get(getEntityClass(), id));
     }
 
+
     @Override
     public void delete(T entity) {
         Session session = sessionFactory.getCurrentSession();

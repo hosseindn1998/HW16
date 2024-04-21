@@ -11,11 +11,13 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString(callSuper = true)
 @Entity
+@Table(name = "student")
 public class Student extends Person {
     @ToString.Exclude
     @OneToMany(mappedBy = "student")

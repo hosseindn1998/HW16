@@ -3,6 +3,9 @@ package Repository.student;
 import Model.Student;
 import base.repository.BaseRepository;
 
+import java.util.List;
+
 public interface StudentRepository extends BaseRepository<Student,Long> {
-    boolean isExistsByUsername(String username);
+    Boolean isExistsByUsername(String username);
+    Student authentication(String username,String password);
 }

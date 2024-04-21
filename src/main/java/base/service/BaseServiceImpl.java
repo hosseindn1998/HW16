@@ -16,7 +16,7 @@ public class BaseServiceImpl<T extends BaseEntity<ID>,
         R extends BaseRepository<T, ID>>
         implements BaseService<T, ID> {
 
-    private final R repository;
+    protected final R repository;
     private final SessionFactory sessionFactory;
 
     @Override
