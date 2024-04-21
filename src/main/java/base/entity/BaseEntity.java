@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,5 +19,5 @@ import java.io.Serializable;
 public class BaseEntity<ID extends Serializable> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private ID id;
+    protected ID id;
 }

@@ -5,20 +5,24 @@ import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString()
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@ToString(callSuper = true)
 @Entity
 public class Student extends Person {
+    @ToString.Exclude
     @OneToMany(mappedBy = "student")
-    List<CareerEnrollment> careerEnrollments;
-    @OneToMany
-    List<CourseEnrollment>courseEnrollments;
+    Collection<CareerEnrollment> careerEnrollments=new ArrayList<>();
+    @ToString.Exclude
+    @OneToMany(mappedBy = "student")
+    Collection<CourseEnrollment>courseEnrollments=new ArrayList<>();
     String studentCode;
 
 
@@ -36,4 +40,6 @@ public class Student extends Person {
     public Student(String studentCode) {
         this.studentCode = studentCode;
     }
+
+
 }

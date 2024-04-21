@@ -1,14 +1,13 @@
 package Repository.CareerEnrollment;
 
-import Model.Career;
 import Model.CareerEnrollment;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class CareerEnrollmentRepositoryImpl extends BaseRepositoryImpl<CareerEnrollment,Long> implements CareerEnrollmentRepository {
 
-    public CareerEnrollmentRepositoryImpl(Session session) {
-        super(session);
+    public CareerEnrollmentRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override

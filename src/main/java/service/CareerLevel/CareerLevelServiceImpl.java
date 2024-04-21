@@ -1,15 +1,14 @@
 package service.CareerLevel;
 
 import Model.CareerLevel;
-import Model.Student;
 import Repository.CareerLevel.CareerLevelRepository;
-import Repository.student.StudentRepository;
 import base.service.BaseServiceImpl;
+import org.hibernate.SessionFactory;
 
 public class CareerLevelServiceImpl extends BaseServiceImpl<CareerLevel,Long, CareerLevelRepository>implements CareerLevelService {
 
-    public CareerLevelServiceImpl(CareerLevelRepository careerLevelRepository) {
-        super(careerLevelRepository);
+    public CareerLevelServiceImpl(CareerLevelRepository careerLevelRepository, SessionFactory sessionFactory) {
+        super(careerLevelRepository, sessionFactory);
     }
 
 }

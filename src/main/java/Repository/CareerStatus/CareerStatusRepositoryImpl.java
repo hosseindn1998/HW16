@@ -2,12 +2,12 @@ package Repository.CareerStatus;
 
 import Model.CareerStatus;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class CareerStatusRepositoryImpl extends BaseRepositoryImpl<CareerStatus,Long> implements CareerStatusRepository {
 
-    public CareerStatusRepositoryImpl(Session session) {
-        super(session);
+    public CareerStatusRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override

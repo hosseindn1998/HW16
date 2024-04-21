@@ -1,15 +1,14 @@
 package service.Schedule;
 
 import Model.Schedule;
-import Model.Student;
 import Repository.Schedule.ScheduleRepository;
-import Repository.student.StudentRepository;
 import base.service.BaseServiceImpl;
+import org.hibernate.SessionFactory;
 
 public class ScheduleServiceImpl extends BaseServiceImpl<Schedule,Long, ScheduleRepository>implements ScheduleService {
 
-    public ScheduleServiceImpl(ScheduleRepository scheduleRepository) {
-        super(scheduleRepository);
+    public ScheduleServiceImpl(ScheduleRepository scheduleRepository, SessionFactory sessionFactory) {
+        super(scheduleRepository, sessionFactory);
     }
 
 }

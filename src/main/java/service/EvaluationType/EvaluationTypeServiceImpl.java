@@ -1,15 +1,14 @@
 package service.EvaluationType;
 
 import Model.EvaluationType;
-import Model.Student;
 import Repository.EvaluationType.EvaluationTypeRepository;
-import Repository.student.StudentRepository;
 import base.service.BaseServiceImpl;
+import org.hibernate.SessionFactory;
 
 public class EvaluationTypeServiceImpl extends BaseServiceImpl<EvaluationType,Long,EvaluationTypeRepository>implements EvaluationTypeService {
 
-    public EvaluationTypeServiceImpl(EvaluationTypeRepository evaluationtyperepository) {
-        super(evaluationtyperepository);
+    public EvaluationTypeServiceImpl(EvaluationTypeRepository evaluationtyperepository, SessionFactory sessionFactory) {
+        super(evaluationtyperepository, sessionFactory);
     }
 
 }

@@ -2,12 +2,12 @@ package Repository.EvaluationType;
 
 import Model.EvaluationType;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class EvaluationTypeRepositoryImpl extends BaseRepositoryImpl<EvaluationType,Long> implements EvaluationTypeRepository {
 
-    public EvaluationTypeRepositoryImpl(Session session) {
-        super(session);
+    public EvaluationTypeRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override

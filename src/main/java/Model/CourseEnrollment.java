@@ -21,6 +21,7 @@ public class CourseEnrollment extends BaseEntity<Long> {
     Student student;
     @OneToMany(mappedBy = "courseEnrollment")
     List<CourseEnrollmentEvaluation>courseEnrollmentEvaluations;
-    Integer courseOccurrenceId;
+    @ManyToOne
+    CourseOccurrence courseOccurrence;
     Integer finalScore;
 }

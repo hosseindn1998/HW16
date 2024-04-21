@@ -18,7 +18,6 @@ import java.util.List;
 @ToString()
 @Entity
 public class CourseOccurrence extends BaseEntity<Long> {
-    Integer courseId;
     Integer occurrenceYear;
     String courseOccurrenceCode;
     @ManyToOne
@@ -32,4 +31,7 @@ public class CourseOccurrence extends BaseEntity<Long> {
     Course course;
     @OneToMany(mappedBy = "courseOccurrence")
     List<AssistantProfessor>assistantProfessors;
+    @OneToMany(mappedBy = "courseOccurrence")
+    List<CourseEnrollment>courseEnrollments;
+
 }

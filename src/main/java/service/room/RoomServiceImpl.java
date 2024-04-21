@@ -1,15 +1,14 @@
 package service.room;
 
 import Model.Room;
-import Model.Student;
 import Repository.room.RoomRepository;
-import Repository.student.StudentRepository;
 import base.service.BaseServiceImpl;
+import org.hibernate.SessionFactory;
 
 public class RoomServiceImpl extends BaseServiceImpl<Room,Long, RoomRepository>implements RoomService {
 
-    public RoomServiceImpl(RoomRepository roomrepository) {
-        super(roomrepository);
+    public RoomServiceImpl(RoomRepository roomrepository, SessionFactory sessionFactory) {
+        super(roomrepository, sessionFactory);
     }
 
 }

@@ -26,5 +26,7 @@ public class Career extends BaseEntity<Long> {
     List<CareerEnrollment> careerEnrollment;
     @ManyToOne
     CareerLevel careerLevel;
+    @ManyToOne
+    Department department;
 
 }

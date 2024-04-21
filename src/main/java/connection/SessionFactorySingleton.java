@@ -1,9 +1,6 @@
 package connection;
 
-import Model.Employee;
-import Model.Person;
-import Model.Professor;
-import Model.Student;
+import Model.*;
 import base.entity.BaseEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -22,9 +19,25 @@ public class SessionFactorySingleton {
                     .build();
 
             INSTANCE = new MetadataSources(registry)
-                    .addAnnotatedClass(Person.class)
                     .addAnnotatedClass(Student.class)
+                    .addAnnotatedClass(Schedule.class)
+                    .addAnnotatedClass(Room.class)
+                    .addAnnotatedClass(Course.class)
                     .addAnnotatedClass(Professor.class)
+                    .addAnnotatedClass(ProfessorCourse.class)
+                    .addAnnotatedClass(Person.class)
+                    .addAnnotatedClass(EvaluationType.class)
+                    .addAnnotatedClass(Employee.class)
+                    .addAnnotatedClass(Department.class)
+                    .addAnnotatedClass(CourseOccurrence.class)
+                    .addAnnotatedClass(CourseEnrollmentEvaluation.class)
+                    .addAnnotatedClass(CourseEnrollment.class)
+                    .addAnnotatedClass(CourseDependency.class)
+                    .addAnnotatedClass(CareerStatus.class)
+                    .addAnnotatedClass(CareerLevel.class)
+                    .addAnnotatedClass(CareerEnrollment.class)
+                    .addAnnotatedClass(Career.class)
+                    .addAnnotatedClass(AssistantProfessor.class)
                     .buildMetadata()
                     .buildSessionFactory();
         }

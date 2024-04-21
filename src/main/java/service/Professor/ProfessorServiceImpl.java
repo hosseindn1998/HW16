@@ -1,15 +1,14 @@
 package service.Professor;
 
 import Model.Professor;
-import Model.Student;
 import Repository.Professor.ProfessorRepository;
-import Repository.student.StudentRepository;
 import base.service.BaseServiceImpl;
+import org.hibernate.SessionFactory;
 
 public class ProfessorServiceImpl extends BaseServiceImpl<Professor,Long, ProfessorRepository>implements ProfessorService {
 
-    public ProfessorServiceImpl(ProfessorRepository professorrepository) {
-        super(professorrepository);
+    public ProfessorServiceImpl(ProfessorRepository professorrepository, SessionFactory sessionFactory) {
+        super(professorrepository, sessionFactory);
     }
 
 }

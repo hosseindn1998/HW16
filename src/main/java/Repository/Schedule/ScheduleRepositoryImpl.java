@@ -2,12 +2,12 @@ package Repository.Schedule;
 
 import Model.Schedule;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class ScheduleRepositoryImpl extends BaseRepositoryImpl<Schedule,Long> implements ScheduleRepository {
 
-    public ScheduleRepositoryImpl(Session session) {
-        super(session);
+    public ScheduleRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override

@@ -2,12 +2,12 @@ package Repository.CourseOccurence;
 
 import Model.CourseOccurrence;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class CourseOccurenceRepositoryImpl extends BaseRepositoryImpl<CourseOccurrence,Long> implements CourseOccurenceRepository {
 
-    public CourseOccurenceRepositoryImpl(Session session) {
-        super(session);
+    public CourseOccurenceRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override

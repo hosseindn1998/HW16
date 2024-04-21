@@ -1,6 +1,8 @@
 package Model;
 
 import base.entity.BaseEntity;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.*;
@@ -14,6 +16,7 @@ import java.util.List;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString
+@Entity
 public class Course extends BaseEntity<Long> {
     String courseName;
     @ManyToOne

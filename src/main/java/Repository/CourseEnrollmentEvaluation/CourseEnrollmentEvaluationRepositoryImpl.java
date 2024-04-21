@@ -2,12 +2,12 @@ package Repository.CourseEnrollmentEvaluation;
 
 import Model.CourseEnrollmentEvaluation;
 import base.repository.BaseRepositoryImpl;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class CourseEnrollmentEvaluationRepositoryImpl extends BaseRepositoryImpl<CourseEnrollmentEvaluation,Long> implements CourseEnrollmentEvaluationRepository {
 
-    public CourseEnrollmentEvaluationRepositoryImpl(Session session) {
-        super(session);
+    public CourseEnrollmentEvaluationRepositoryImpl(SessionFactory sessionFactory) {
+        super(sessionFactory);
     }
 
     @Override
