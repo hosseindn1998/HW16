@@ -5,4 +5,6 @@ import Model.Student;
 import base.service.BaseService;
 
 public interface EmployeeService extends BaseService<Employee,Long> {
+     Employee authentication(String username,String password);
+
 }

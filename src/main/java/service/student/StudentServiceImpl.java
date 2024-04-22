@@ -45,8 +45,9 @@ public class StudentServiceImpl extends BaseServiceImpl<Student,Long,StudentRepo
                     transaction.rollback();
                 }
                 e.printStackTrace();
-                return new Student();
+                return null;
             }
 
     }
+
 }

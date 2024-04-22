@@ -26,6 +26,7 @@ public class Student extends Person {
     @OneToMany(mappedBy = "student")
     Collection<CourseEnrollment>courseEnrollments=new ArrayList<>();
     String studentCode;
+    Integer lastAverage;
 
 
     public Student(String firstName, String lastName, String nationalCode, Date dateOfBirth, String email, String phoneNumber, String username, String password, String studentCode) {

@@ -19,6 +19,7 @@ import java.util.List;
 @Entity
 public class Course extends BaseEntity<Long> {
     String courseName;
+    Integer unit;
     @ManyToOne
     Career career;
     @OneToMany(mappedBy = "course")

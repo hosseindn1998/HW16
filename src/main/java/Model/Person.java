@@ -12,6 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@ToString
 @MappedSuperclass
 public class Person extends BaseEntity<Long> {
 

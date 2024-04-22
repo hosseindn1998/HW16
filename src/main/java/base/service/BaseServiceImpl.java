@@ -9,6 +9,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @RequiredArgsConstructor
 public class BaseServiceImpl<T extends BaseEntity<ID>,
@@ -56,6 +58,22 @@ public class BaseServiceImpl<T extends BaseEntity<ID>,
         } catch (Exception e) {
             assert transaction != null;
             transaction.rollback();
+        }
+    }
+    public List<T> showAll(Class<T> entityClass) {
+
+        List<T> foundEntities=new ArrayList<>();
+        try (Session session = sessionFactory.getCurrentSession()) {
+            session.beginTransaction();
+            foundEntities =repository.showAll(entityClass);
+            session.getTransaction().commit();
+            return foundEntities;
+        } catch (Exception e) {
+            if(foundEntities.isEmpty())
+                throw new NotFoundException("not found anything");
+            else{
+                throw new NotFoundException("error in progress founding ...");
+            }
         }
     }
 }

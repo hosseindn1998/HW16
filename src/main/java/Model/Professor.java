@@ -13,17 +13,20 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString()
+@ToString(callSuper = true)
 @Entity
 public class Professor extends Person{
     Boolean isHeyatElmi;
     Integer hoqoqPaye;
     Integer vahedMabna;
     Integer salary;
+    @ToString.Exclude
     @OneToMany(mappedBy = "professor")
     List<CourseOccurrence> courseOccurrences;
+    @ToString.Exclude
     @OneToMany(mappedBy = "professor")
     List<ProfessorCourse>professorCourses;
+    @ToString.Exclude
     @OneToMany(mappedBy = "professor")
     List<AssistantProfessor>assistantProfessors;
 }

@@ -28,6 +28,20 @@ import java.sql.SQLException;
 import java.util.Scanner;
 @NoArgsConstructor
 public class Menu {
+    private int currentTermYear;
+    private int lastTermYear;
+    private int currentTermNumber;
+    private int lastTermNumber;
+    public void calculateLastTerm(int currentTermYear,int currentTermNumber){
+        if(currentTermNumber==1){
+            lastTermYear=currentTermYear-1;
+            lastTermNumber=2;
+        }else{
+            lastTermYear=currentTermYear;
+            lastTermYear=1;
+        }
+    }
+
     private final ScheduleService scheduleService=ApplicationContext.getScheduleService();
     private final RoomService roomService=ApplicationContext.getRoomService();
     private final ProfessorCourseService professorCourseService=ApplicationContext.getProfessorCourseService();

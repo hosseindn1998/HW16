@@ -38,4 +38,6 @@ public class StudentRepositoryImpl extends BaseRepositoryImpl<Student,Long> impl
                 .setParameter("password", password)
                 .uniqueResult();
     }
+
+
 }
