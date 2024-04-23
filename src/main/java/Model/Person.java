@@ -2,6 +2,7 @@ package Model;
 
 import base.entity.BaseEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -18,13 +19,14 @@ public class Person extends BaseEntity<Long> {
 
     String firstName;
     String lastName;
+    @Pattern(regexp = "^[0-9]{10}$")
     String nationalCode;
     Date dateOfBirth;
     String email;
     String phoneNumber;
-//    @Column(unique = true)
+    @Column(unique = true)
     String username;
-//    @Pattern(regexp = "^((?=\\S*?[A-Z])(?=\\S*?[a-z])(?=\\S*?[0-9]).{6,})\\S$")
+    @Pattern(regexp = "^((?=\\S*?[A-Z])(?=\\S*?[a-z])(?=\\S*?[0-9]).{6,})\\S$")
     String password;
 
     public Person(Long aLong, String firstName, String lastName, String nationalCode, Date dateOfBirth, String email, String phoneNumber, String username, String password) {

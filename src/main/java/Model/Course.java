@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@ToString
+@ToString(callSuper = true)
 @Entity
 public class Course extends BaseEntity<Long> {
     String courseName;
@@ -34,4 +34,5 @@ public class Course extends BaseEntity<Long> {
     Integer year;
     Integer semester;
     Boolean optative;
+
 }

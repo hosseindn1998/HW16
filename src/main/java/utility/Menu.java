@@ -78,10 +78,8 @@ public class Menu {
     }
         public void signIn () {
             System.out.println("***   User Menu   ***");
-            System.out.println("1- add User");
-            System.out.println("2- delete User");
-            System.out.println("3- edit user");
-            System.out.println("0- Back to previous Menu");
+
         }
+
 
 }

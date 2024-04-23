@@ -18,8 +18,8 @@ import java.util.List;
 public class CourseEnrollment extends BaseEntity<Long> {
     @ManyToOne
     Student student;
-    @OneToMany(mappedBy = "courseEnrollment")
-
+    @OneToMany(mappedBy = "courseEnrollment",fetch = FetchType.EAGER)
+            @ElementCollection()
     List<CourseEnrollmentEvaluation>courseEnrollmentEvaluations;
     @ManyToOne
     CourseOccurrence courseOccurrence;

@@ -41,4 +41,16 @@ public class CourseEnrollmentServiceImpl extends BaseServiceImpl<CourseEnrollmen
             throw new NotFoundException(String.format("entity with %s not found", studentId));
         }
     }
+
+    @Override
+    public Boolean isAverageMorThan18(Integer studentId, Integer occurrenceYear, Integer occurrenceNumber) {
+        try (Session session = sessionFactory.getCurrentSession()) {
+            session.beginTransaction();
+            Boolean result=repository.isAverageMorThan18(studentId,occurrenceYear,occurrenceNumber);
+            session.getTransaction().commit();
+            return result;
+        } catch (Exception e) {
+            throw new NotFoundException(String.format("entity with %s not found", studentId));
+        }
+    }
 }

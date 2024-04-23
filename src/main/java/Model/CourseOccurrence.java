@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-
+@ToString(callSuper = true)
 @Entity
 public class CourseOccurrence extends BaseEntity<Long> {
     Integer occurrenceYear;
@@ -23,7 +23,6 @@ public class CourseOccurrence extends BaseEntity<Long> {
     Date startDate;
     Date endDate;
     Integer capacity;
-    @ElementCollection(fetch = FetchType.EAGER)
     @OneToMany(mappedBy = "courseOccurrence")
     List<Schedule>schedules;
     @ManyToOne
@@ -33,19 +32,5 @@ public class CourseOccurrence extends BaseEntity<Long> {
     @OneToMany(mappedBy = "courseOccurrence")
     List<CourseEnrollment>courseEnrollments;
 
-    @Override
-    public String toString() {
-        return "CourseOccurrence{" +
-                "occurrenceYear=" + occurrenceYear +
-                ", OccurrenceNumber=" + OccurrenceNumber +
-                ", professor=" + professor +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", capacity=" + capacity +
-                ", schedules=" + schedules +
-                ", course=" + course +
-                ", assistantProfessors=" + assistantProfessors +
-                ", courseEnrollments=" + courseEnrollments +
-                '}';
-    }
+
 }

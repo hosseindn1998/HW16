@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        Menu menu=new Menu();
+        menu.publicMenu();
 //        System.out.println(ApplicationContext.getStudentService().isExistsByUsername("hosseindn1998"));
 //        if(ApplicationContext.getStudentService().authentication("hosseindn1998","Aa12345")!=null){
 //            Student student=ApplicationContext.getStudentService().authentication("hosseindn1998", "Aa12345");
@@ -22,7 +24,7 @@ public class Main {
 //            employee.setSalary(7000);
 //            System.out.println(employee);
 //        }
-//        System.out.println(ApplicationContext.getCourseOccurrenceService().findUnit(1));
+//        System.out.println(ApplicationContext.getCourseOccurrenceService().findUnitProfessor(1,403,1));
 //        CourseEnrollment courseEnrollment=new CourseEnrollment();
 //        courseEnrollment.setStudent(ApplicationContext.getStudentService().findById(1L));
 //        courseEnrollment.setCourseOccurrence(ApplicationContext.getCourseOccurrenceService().findById(3L));
@@ -30,7 +32,15 @@ public class Main {
 
 //        System.out.println(ApplicationContext.getCourseEnrollmentService().isEnrollment(1, 1));
 //        System.out.println(ApplicationContext.getCourseEnrollmentService().isCoursePassed(1, 1));
+//        System.out.println(ApplicationContext.getCourseEnrollmentService().isAverageMorThan18(1, 403,1));
+//        Integer unit = ApplicationContext.getCourseService().findById(1L).getUnit();
+//        System.out.println(unit);
 
-    }
+//        System.out.println(ApplicationContext.getCourseOccurrenceService().findUnitStudent(1, 403, 1));
+//        List<String> results = ApplicationContext.getCourseOccurrenceService().showScores(1, 403, 1);
+//        System.out.println(results); kkkkkkkkkar nakard
 
-}
+        System.out.println(ApplicationContext.getCourseEnrollmentService().showAll(CourseEnrollment.class));
+
+
+    }}
